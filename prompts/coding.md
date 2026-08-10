@@ -168,3 +168,107 @@ to guess the user's intention.
 - Constraints
 - Output requirements
 - Audience specification
+
+## Prompt #2 — Debugging Python Code
+
+### Domain
+Coding
+
+### Prompt Technique
+Zero-shot
+
+### Use Case
+Identifying and fixing errors in Python code.
+
+---
+
+## 1. Bad Prompt
+```python
+Fixed Code
+numbers = [10, 20, 30, 40, 50]
+average = sum(numbers) / len(numbers)
+
+print("Average:", average)
+```
+---
+
+## 2. Bad Prompt Output
+
+```text
+Output
+Average: 30.0
+```
+---
+
+## 3. Optimized Prompt
+
+Act as an experienced Python developer.
+
+Fix the following Python code and explain the problem in a beginner-friendly way.
+
+Requirements:
+- Identify the error.
+- Explain why the error occurs.
+- Provide the corrected code.
+- Show the expected output.
+- Keep the code simple.
+
+Code:
+
+numbers = [10, 20, 30, 40, 50]
+average = sum(numbers) / 0
+
+print("Average:", average)
+
+---
+
+## 4. Optimized Prompt Output
+```python
+1. Error
+
+The error is here:
+
+average = sum(numbers) / 0
+
+You are trying to divide by 0, which is not allowed in Python. It causes a ZeroDivisionError.
+
+2. Why does it happen?
+
+To calculate an average:
+
+Average = Total ÷ Number of values
+
+There are 5 numbers in the list, so we should divide the sum by len(numbers), not 0.
+
+3. Corrected code
+numbers = [10, 20, 30, 40, 50]
+
+average = sum(numbers) / len(numbers)
+
+print("Average:", average)
+4. Expected output
+Average: 30.0
+```
+---
+
+## 5. Why the Optimized Prompt Is Better
+
+The optimized prompt is better because:
+
+1. It clearly tells the AI what to do.
+2. It asks the AI to identify the error.
+3. It asks for an explanation.
+4. It asks for the corrected code.
+5. It asks for the expected output.
+6. It is easy for a beginner to understand.
+
+---
+
+## 6. Prompt Engineering Principles Demonstrated
+
+- Role prompting
+- Clear task definition
+- Error identification
+- Output requirements
+- Audience specification
+- Constraints
