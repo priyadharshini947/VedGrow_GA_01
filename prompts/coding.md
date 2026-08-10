@@ -274,3 +274,136 @@ The optimized prompt is better because:
 - Output requirements
 - Audience specification
 - Constraints
+
+# Prompt #3 — SQL Query Generation
+
+### Domain
+
+Database / SQL
+
+### Prompt Technique
+
+Few-shot prompting
+
+### Use Case
+
+Generating SQL queries for retrieving student information from a database.
+
+---
+
+## 1. Bad Prompt
+
+> Write an SQL query for students.
+
+### Why is this a bad prompt?
+
+The prompt is too vague. It does not specify the table name, columns, required information, or the type of data to retrieve. The AI has to guess what query is needed.
+
+---
+
+## 2. Bad Prompt Output
+
+```sql
+SELECT * FROM students;
+```
+
+### Example Output
+
+| id | name  | department | marks |
+| -- | ----- | ---------- | ----- |
+| 1  | Rahul | CSE        | 85    |
+| 2  | Priya | ECE        | 78    |
+| 3  | Arun  | CSE        | 92    |
+
+The query simply retrieves all the records without addressing a specific requirement.
+
+---
+
+## 3. Optimized Prompt
+
+> Act as an experienced SQL developer.
+>
+> Write SQL queries to retrieve student information from a `students` table.
+>
+> Table columns:
+>
+> * `id`
+> * `name`
+> * `department`
+> * `marks`
+>
+> Follow these examples:
+>
+> Example 1:
+>
+> * Request: Display all students from the CSE department.
+> * Query:
+>
+> ```sql
+> SELECT * FROM students
+> WHERE department = 'CSE';
+> ```
+>
+> Example 2:
+>
+> * Request: Display students who scored more than 80 marks.
+> * Query:
+>
+> ```sql
+> SELECT * FROM students
+> WHERE marks > 80;
+> ```
+>
+> Now write a query to:
+>
+> **Display the names of students who scored more than 75 marks.**
+>
+> Keep the query simple and beginner-friendly.
+
+---
+
+## 4. Optimized Prompt Output
+
+```sql
+SELECT name
+FROM students
+WHERE marks > 75;
+```
+
+### Example Output
+
+| name  |
+| ----- |
+| Rahul |
+| Priya |
+| Arun  |
+
+---
+
+## 5. Why the Optimized Prompt Is Better
+
+The optimized prompt improves the original prompt by:
+
+1. **Defining a role** — The AI is instructed to act as an experienced SQL developer.
+2. **Clearly defining the table** — The `students` table is specified.
+3. **Providing column details** — The available columns are clearly mentioned.
+4. **Providing examples** — Two example requests and queries show the expected pattern.
+5. **Clearly defining the task** — The exact information to retrieve is specified.
+6. **Specifying the output** — Only student names should be displayed.
+7. **Keeping it beginner-friendly** — The query should be simple and easy to understand.
+
+### Key Lesson
+
+Few-shot prompting helps the AI understand the expected pattern by providing examples before asking it to solve a new but similar task.
+---
+
+## 6. Prompt Engineering Principles Demonstrated
+
+* Role prompting
+* Few-shot prompting
+* Task specification
+* Context
+* Examples
+* Constraints
+* Output requirements
+* Audience specification
