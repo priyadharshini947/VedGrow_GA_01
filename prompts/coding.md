@@ -404,3 +404,147 @@ The optimized prompt improves the original prompt by:
 * Constraints
 * Output requirements
 * Audience specification
+
+Prompt #4 — Code Optimization
+
+### Domain
+
+Coding
+
+### Prompt Technique
+
+Structured reasoning
+
+### Use Case
+
+Optimizing a Python program to make it simpler, cleaner, and more efficient.
+
+---
+
+## 1. Bad Prompt
+
+> Optimize this Python code.
+
+### Why is this a bad prompt?
+
+The prompt does not explain what should be improved. It does not mention readability, efficiency, or what the optimized code should achieve.
+
+---
+
+## 2. Bad Prompt Output
+
+```python
+numbers = [10, 20, 30, 40, 50]
+
+total = 0
+
+for number in numbers:
+    total = total + number
+
+average = total / len(numbers)
+
+print("Average:", average)
+```
+
+The output may be correct, but the AI has not been given clear instructions about what type of optimization is required.
+
+---
+
+## 3. Optimized Prompt
+
+> Act as an experienced Python developer.
+>
+> Optimize the following Python code.
+>
+> Requirements:
+>
+> * First identify what can be improved.
+> * Explain the improvements step by step.
+> * Make the code shorter and easier to read.
+> * Use simple Python features suitable for beginners.
+> * Keep the output the same.
+> * Provide the optimized code after the explanation.
+>
+> Code:
+>
+> ```python
+> numbers = [10, 20, 30, 40, 50]
+>
+> total = 0
+> for number in numbers:
+>     total = total + number
+>
+> average = total / len(numbers)
+>
+> print("Average:", average)
+> ```
+
+---
+
+## 4. Optimized Prompt Output
+
+### Step 1: Identify the improvement
+
+The `sum()` function can directly calculate the total of all numbers. This removes the need for the `for` loop.
+
+### Step 2: Simplify the calculation
+
+Instead of:
+
+```python
+total = 0
+
+for number in numbers:
+    total = total + number
+```
+
+We can use:
+
+```python
+total = sum(numbers)
+```
+
+### Step 3: Optimized Code
+
+```python
+numbers = [10, 20, 30, 40, 50]
+
+total = sum(numbers)
+average = total / len(numbers)
+
+print("Average:", average)
+```
+
+### Expected Output
+
+```text
+Average: 30.0
+```
+
+---
+
+## 5. Why the Optimized Prompt Is Better
+
+The optimized prompt improves the original prompt by:
+
+1. **Defining a role** — The AI is instructed to act as an experienced Python developer.
+2. **Clearly defining the task** — The goal is to optimize the given code.
+3. **Providing a structured process** — The AI must identify improvements and explain them step by step.
+4. **Adding readability requirements** — The optimized code should be easy to understand.
+5. **Adding simplicity requirements** — Beginner-friendly Python features should be used.
+6. **Preserving the output** — The optimized code must produce the same result.
+7. **Defining the expected response** — The explanation should come before the optimized code.
+
+---
+
+## 6. Prompt Engineering Principles Demonstrated
+
+* Role prompting
+* Structured reasoning
+* Task specification
+* Constraints
+* Step-by-step analysis
+* Code optimization
+* Output requirements
+* Audience specification
+
