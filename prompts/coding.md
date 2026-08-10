@@ -223,7 +223,7 @@ print("Average:", average)
 ---
 
 ## 4. Optimized Prompt Output
-```python
+```text
 1. Error
 
 The error is here:
@@ -241,11 +241,14 @@ Average = Total ÷ Number of values
 There are 5 numbers in the list, so we should divide the sum by len(numbers), not 0.
 
 3. Corrected code
+```python
 numbers = [10, 20, 30, 40, 50]
 
 average = sum(numbers) / len(numbers)
 
 print("Average:", average)
+```
+```text
 4. Expected output
 Average: 30.0
 ```
