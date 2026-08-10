@@ -405,7 +405,7 @@ The optimized prompt improves the original prompt by:
 * Output requirements
 * Audience specification
 
-Prompt #4 — Code Optimization
+#Prompt #4 — Code Optimization
 
 ### Domain
 
