@@ -33,7 +33,7 @@ The AI therefore has to make assumptions.
 
 ## 2. Bad Prompt Output
 
-# Student Mark Calculator
+
 
 name = input("Enter student name: ")
 
@@ -97,28 +97,20 @@ Grade: B
 
 ## 4. Optimized Prompt Output
 
-# Student Marks Calculator
-
-# Get marks for five subjects
 subject1 = float(input("Enter marks for Subject 1: "))
 subject2 = float(input("Enter marks for Subject 2: "))
 subject3 = float(input("Enter marks for Subject 3: "))
 subject4 = float(input("Enter marks for Subject 4: "))
 subject5 = float(input("Enter marks for Subject 5: "))
 
-# Store all marks in a list
 marks = [subject1, subject2, subject3, subject4, subject5]
 
-# Validate that every mark is between 0 and 100
 if any(mark < 0 or mark > 100 for mark in marks):
     print("Invalid marks! Marks must be between 0 and 100.")
 
 else:
-    # Calculate total and average
     total_marks = sum(marks)
     average_marks = total_marks
-
-    # Assign grade based on average
     if average_marks >= 90:
         grade = "A"
     elif average_marks >= 80:
@@ -129,8 +121,6 @@ else:
         grade = "D"
     else:
         grade = "F"
-
-    # Display the result clearly
     print("\n--- Student Result ---")
     print("Total Marks:", total_marks)
     print("Average Marks:", average_marks)
