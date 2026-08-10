@@ -241,6 +241,7 @@ Average = Total ÷ Number of values
 There are 5 numbers in the list, so we should divide the sum by len(numbers), not 0.
 
 3. Corrected code
+```
 ```python
 numbers = [10, 20, 30, 40, 50]
 
