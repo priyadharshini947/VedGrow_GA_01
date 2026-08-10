@@ -244,9 +244,7 @@ There are 5 numbers in the list, so we should divide the sum by len(numbers), no
 ```
 ```python
 numbers = [10, 20, 30, 40, 50]
-
 average = sum(numbers) / len(numbers)
-
 print("Average:", average)
 ```
 ```text
