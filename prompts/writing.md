@@ -1,4 +1,3 @@
-
 Prompt #4 — Email Generation
 
 ### Domain
@@ -96,3 +95,5 @@ The optimized prompt improves the original prompt by:
 * Tone specification
 * Output requirements
 * Audience specification
+
+
