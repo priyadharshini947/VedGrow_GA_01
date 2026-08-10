@@ -548,3 +548,191 @@ The optimized prompt improves the original prompt by:
 * Output requirements
 * Audience specification
 
+# Prompt #5 — API Creation
+
+## Domain
+
+Coding
+
+## Prompt Technique
+
+Zero-shot
+
+## Use Case
+
+Generating a simple REST API using Python and Flask for managing student information.
+
+---
+
+## 1. Bad Prompt
+
+> Create an API for students.
+
+## Why is this a bad prompt?
+
+The prompt is too vague. It does not specify the programming language, framework, API operations, data structure, or expected endpoints. The AI has to make assumptions about how the API should work.
+
+---
+
+## 2. Bad Prompt Output
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Student API"
+
+app.run()
+```
+
+This only creates a basic endpoint and does not provide any functionality for managing student information.
+
+---
+
+## 3. Optimized Prompt
+
+> Act as an experienced Python backend developer.
+>
+> Create a simple REST API using **Python and Flask** for managing student information.
+>
+> Requirements:
+>
+> * Create a `students` list containing student ID, name, department, and marks.
+> * Create a **GET** endpoint to retrieve all students.
+> * Create a **GET** endpoint to retrieve a student by ID.
+> * Create a **POST** endpoint to add a new student.
+> * Return responses in JSON format.
+> * Use meaningful variable and endpoint names.
+> * Keep the code simple and beginner-friendly.
+> * Include brief comments explaining the important parts.
+> * Provide example requests and responses.
+
+---
+
+## 4. Optimized Prompt Output
+
+```python
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+# Sample student data
+students = [
+    {"id": 1, "name": "Rahul", "department": "CSE", "marks": 85},
+    {"id": 2, "name": "Priya", "department": "ECE", "marks": 90}
+]
+
+# Get all students
+@app.route("/students", methods=["GET"])
+def get_students():
+    return jsonify(students)
+
+
+# Get a student by ID
+@app.route("/students/<int:student_id>", methods=["GET"])
+def get_student(student_id):
+    for student in students:
+        if student["id"] == student_id:
+            return jsonify(student)
+
+    return jsonify({"message": "Student not found"}), 404
+
+
+# Add a new student
+@app.route("/students", methods=["POST"])
+def add_student():
+    new_student = request.get_json()
+    students.append(new_student)
+
+    return jsonify({
+        "message": "Student added successfully",
+        "student": new_student
+    }), 201
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+### Example GET Request
+
+```text
+GET /students
+```
+
+### Example Response
+
+```json
+[
+    {
+        "id": 1,
+        "name": "Rahul",
+        "department": "CSE",
+        "marks": 85
+    },
+    {
+        "id": 2,
+        "name": "Priya",
+        "department": "ECE",
+        "marks": 90
+    }
+]
+```
+
+### Example POST Request
+
+```json
+{
+    "id": 3,
+    "name": "Arun",
+    "department": "IT",
+    "marks": 82
+}
+```
+
+### Example Response
+
+```json
+{
+    "message": "Student added successfully",
+    "student": {
+        "id": 3,
+        "name": "Arun",
+        "department": "IT",
+        "marks": 82
+    }
+}
+```
+
+---
+
+## 5. Why the Optimized Prompt Is Better
+
+The optimized prompt improves the original prompt by:
+
+1. **Defining a role** — The AI is instructed to act as an experienced Python backend developer.
+2. **Specifying the technology** — Python and Flask are clearly mentioned.
+3. **Clearly defining the task** — The API is specifically designed to manage student information.
+4. **Defining API operations** — GET and POST operations are explicitly required.
+5. **Specifying the data structure** — Student ID, name, department, and marks are provided.
+6. **Defining the response format** — API responses must be returned in JSON.
+7. **Adding code-quality requirements** — Meaningful names and comments are required.
+8. **Specifying the audience** — The code should be simple and beginner-friendly.
+9. **Providing output requirements** — Example requests and responses are requested.
+
+---
+
+## 6. Prompt Engineering Principles Demonstrated
+
+* Role prompting
+* Task specification
+* Context
+* Constraints
+* Output requirements
+* Technology specification
+* Audience specification
+* API endpoint specification
+
