@@ -34,7 +34,7 @@ The AI therefore has to make assumptions.
 ## 2. Bad Prompt Output
 
 
-
+```python
 name = input("Enter student name: ")
 
 mark1 = int(input("Enter marks in Subject 1: "))
@@ -59,7 +59,8 @@ elif average >= 50:
     print("Grade: D")
 else:
     print("Grade: F")
-
+```
+```text
 Example Output
 Enter student name: Rahul
 Enter marks in Subject 1: 85
@@ -71,8 +72,7 @@ Name: Rahul
 Total Marks: 255
 Average: 85.0
 Grade: B
-
----
+```
 
 ## 3. Optimized Prompt
 
@@ -96,7 +96,7 @@ Grade: B
 ---
 
 ## 4. Optimized Prompt Output
-
+```python
 subject1 = float(input("Enter marks for Subject 1: "))
 subject2 = float(input("Enter marks for Subject 2: "))
 subject3 = float(input("Enter marks for Subject 3: "))
@@ -125,7 +125,9 @@ else:
     print("Total Marks:", total_marks)
     print("Average Marks:", average_marks)
     print("Grade:", grade)
-
+```
+```text
+Example output
 Enter marks for Subject 1: 85
 Enter marks for Subject 2: 90
 Enter marks for Subject 3: 78
@@ -136,8 +138,7 @@ Enter marks for Subject 5: 92
 Total Marks: 433
 Average Marks: 86.6
 Grade: B
----
-
+```
 ## 5. Why the Optimized Prompt Is Better
 
 The optimized prompt improves the original prompt by:
