@@ -392,9 +392,6 @@ The optimized prompt improves the original prompt by:
 6. **Specifying the output** — Only student names should be displayed.
 7. **Keeping it beginner-friendly** — The query should be simple and easy to understand.
 
-### Key Lesson
-
-Few-shot prompting helps the AI understand the expected pattern by providing examples before asking it to solve a new but similar task.
 ---
 
 ## 6. Prompt Engineering Principles Demonstrated
