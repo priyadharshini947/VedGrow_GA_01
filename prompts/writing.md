@@ -1,5 +1,5 @@
 
-# Prompt #4 — Email Generation
+Prompt #4 — Email Generation
 
 ### Domain
 
